@@ -29,13 +29,13 @@ def save_data_to_json(data, file_name):
         json.dump(data, f, ensure_ascii=False, indent=4)
 
 # Exemplo de uso
-doc_path = r'c:\Users\Mickael\Downloads\ATA DA REUNIÃO DE MONITORAMENTO N2.5 (Ciclo 3) - INVESTE.docx'  # Substitua pelo caminho real do documento
-n25_data = extract_n25_data(doc_path)
+# doc_path = r'c:\Users\Mickael\Downloads\ATA DA REUNIÃO DE MONITORAMENTO N2.5 (Ciclo 3) - INVESTE.docx'  # Substitua pelo caminho real do documento
+# n25_data = extract_n25_data(doc_path)
 
-save_data_to_json(n25_data, 'n25_data.json')
+# save_data_to_json(n25_data, 'n25_data.json')
 
 
-for cg, data in n25_data.items():
-    print(f"CG: {cg}")
-    print("Observações:")
-    print(f" - {data['observations']}")
+# for cg, data in n25_data.items():
+#     print(f"CG: {cg}")
+#     print("Observações:")
+#     print(f" - {data['observations']}")
