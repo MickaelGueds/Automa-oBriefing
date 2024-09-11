@@ -8,7 +8,7 @@ import threading
 from docx import Document
 
 
-genai.configure(api_key="AIzaSyAckosGZaBTj1SxNti0OyllgV80yjXWJXc")
+genai.configure(api_key="")
 
 def select_file_n1():
     file_path = filedialog.askopenfilename(title="Selecione o arquivo N1", filetypes=[("Arquivos DOCX", "*.docx")])
