@@ -77,14 +77,14 @@ def save_data_to_json(data, file_name):
         json.dump(data, f, ensure_ascii=False, indent=4)
 
 # Exemplo de uso
-doc_path = r'c:\Users\Mickael\Downloads\INVESTE - ATA N2 - 18-06-2024.docx'  
-n2_data = extract_n2_data(doc_path)
+# doc_path = r'c:\Users\Mickael\Downloads\INVESTE - ATA N2 - 18-06-2024.docx'  
+# n2_data = extract_n2_data(doc_path)
 
-save_data_to_json(n2_data, 'n2_data.json')
+# save_data_to_json(n2_data, 'n2_data.json')
 
-for commitment, data in n2_data.items():
-    print(f"Compromisso: {commitment}")
-    print(f"Natureza: {data['natureza']}")
-    print("Observações:")
-    for observation in data['observations']:
-        print(f" - {observation}")
+# for commitment, data in n2_data.items():
+#     print(f"Compromisso: {commitment}")
+#     print(f"Natureza: {data['natureza']}")
+#     print("Observações:")
+#     for observation in data['observations']:
+#         print(f" - {observation}")

@@ -8,7 +8,7 @@ import threading
 from docx import Document
 
 
-genai.configure(api_key="")
+genai.configure(api_key="AIzaSyAckosGZaBTj1SxNti0OyllgV80yjXWJXc")
 
 def select_file_n1():
     file_path = filedialog.askopenfilename(title="Selecione o arquivo N1", filetypes=[("Arquivos DOCX", "*.docx")])
@@ -64,19 +64,8 @@ def send_to_google_ai_and_save(data):
 def send_to_google_ai(data):
     try:
         prompt = (
-            "Você é um redator profissional, e eu preciso que você reescreva as informações abaixo em um formato de relatório claro e coeso. "
-            "As informações estão organizadas por compromissos, e cada compromisso pode ter ações realizadas, deliberações e pendências a serem resolvidas. "
-            "Antes de iniciar coloque APENAS COMPROMISSOS DE NATUREZA DE POLITICAS PUBLICAS, ESQUEÇA GESTÃO E SERVIÇOS E OBRAS POR FAVOR,"
-            "se não tiver nos dados compromissos de natureza de politicas publicas escreva: NÃO TEM COMPROMISSOS DE POLITICA PUBLICA \n"
-            "NÃO ESCREVA MAIS DE UMA REUNIÃO N1,N2,N2.5 QUERO AS INFORMAÇÕES EM SUAS RESPECTIVAS REUNIÕES\n"
-            "Ou seja abaixo da reunião n1 deve ficar os dados da n1, e da n2 n2 e da n2.5 as da n2.5, por favor não deixe desorganizado, organização é a chave aqui \n"
-            "Por favor, organize o texto da seguinte forma:\n\n"
-            "1. Comece identificando o compromisso, mencionando o código e o que ele envolve.\n"
-            "2. Trate o texto para uma lógica e entendimento humano claro.\n"
-            "3. Em cada informação que você receber deve ser tratada de maneira que cada compromisso fique na respectiva reunião; se for da N1, deve ficar com as informações da N1.\n"
-            "4. Por mais que exista mais de um mesmo compromisso, lembre-se que cada um deve ser separado por reunião.\n\n"
-            "5. Por favor deixe todos da n1 no espaço requerido para n1 e todos de n2 para o espaço da n2, e do n2.5 da mesma maneira"
-            "6. Para os da n2.5 faça apenas o dos compromissos que apareceram no n1 e no n2"
+            "Quero que com os dados que vão ser passados no final, você crie um modelo reunindo as informações da ata n1 e n2 e n2.5 para fazer um briefing, nesse briefing você vai fazer um contexto baseado nesse exemplo aqui: Em relação aos Compromissos de políticas públicas, foram discutidos os seguintes pontos: CG-036 - atualizações sobre o Compromisso e repactuação e desdobramento de metas e indicadores. CG-133 - Situação do Projeto ATER Agroecológico, do Plano Estadual de Produção Orgânica e desdobramentos das metas do indicador 4 (distribuição de sementes).  CG-134 - Atualização das fases e marcos.  CG-150 - Atualização do Compromisso e desdobramento das metas do indicador 3.Logo em seguida você com os dados do final, cada compromisso deve ser escrito nesse modelo aqui: CG-036 (Economia solidária, cooperativismo e associativismo) O compromisso recebeu diversas deliberações por parte do Governador na última reunião N1, sendo: O Governador definiu como meta do Compromisso a formação de cooperativas com mais de 1.000 integrantes e sugeriu utilizar a INVESTE como reforço. Portanto, a SAF deve informar como está a composição atual do total de Cooperativas, isto é, quantas atendem a meta estabelecida pelo Governador. Além disso, a Secretaria deve pontuar quais encaminhamentos têm sido dados para cumprir a meta.Ainda em relação ao ponto anterior, o Governador deliberou que o foco deve ser estruturar as cadeias do caju, ovino, caprino, peixe, leites e babaçu, que devem ter suas cooperativas fortalecidas. Desta forma, a SAF deve informar como está sendo feito o apoio para cada cadeia.A SAF agora tem o objetivo de realizar o abastecimento da CEASA com produtos da Agricultura Familiar, portanto, deve traçar um plano de ação para cumprir este objetivo.Foi determinado pelo Governador que a SAF deve verificar a viabilidade de criar uma Casa Apis na região de São Raimundo Nonato. É necessário que a SAF informe as ações para cumprir essa demanda.O Governador também definiu que a SAF deve utilizar recursos do Tesouro, ao invés de esperar recursos federais. A SAF iria apresentar os projetos à SEPLAN. Qual a situação? A SAF deve medir, principalmente, a quantidade de cooperativas e cooperados, além da produção. Desta forma, é necessário reportar se esta demanda já vem sendo cumprida."
+            "ALgumas coisas tambem podem vir meio separas mas lembre-se de juntar em um unico ponto aqueles itens que não fazem sentido sozinho "
             "Aqui estão os dados dos compromissos extraídos das atas:\n\n"
             f"N1: {data['n1_data']}\n\n"
             f"N2: {data['n2_data']}\n\n"
